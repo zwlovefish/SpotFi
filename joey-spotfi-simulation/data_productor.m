@@ -1,10 +1,10 @@
-%theta£ºĞÅºÅÈëÉä½Ç
+%thetaï¼šä¿¡å·å…¥å°„è§’
 function data = data_productor(theta)
-    s = randn(1,1);%Ô´ĞÅºÅ
-    d = 0.06;%ÌìÏß¾àÀë
-    fc = 2400 * 10^6;%ÖĞĞÄÆµÂÊ
-    s1 = signal_productor(s,theta,fc,d);%µÚÒ»¸ùÌìÏßĞÅºÅ
-    s2 = signal_productor(s,theta,fc,2*d);%µÚ¶ş·İÌìÏßĞÅºÅ
-    s3 = signal_productor(s,theta,fc,3*d);%µÚÈı¸ùÌìÏßĞÅºÅ
+    s = randn(1,1);%æºä¿¡å·
+    d = 0.06;%å¤©çº¿è·ç¦»
+    fc = 2400 * 10^6;%ä¸­å¿ƒé¢‘ç‡
+    s1 = signal_productor(s,theta,fc,d);%ç¬¬ä¸€æ ¹å¤©çº¿ä¿¡å·
+    s2 = signal_productor(s,theta,fc,2*d);%ç¬¬äºŒä»½å¤©çº¿ä¿¡å·
+    s3 = signal_productor(s,theta,fc,3*d);%ç¬¬ä¸‰æ ¹å¤©çº¿ä¿¡å·
     data = [s1;s2;s3];
 end

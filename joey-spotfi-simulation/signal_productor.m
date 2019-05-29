@@ -1,19 +1,19 @@
-%s£ºÔ´ĞÅºÅ
-%theta£º½Ç¶È
-%fc£ºÖĞĞÄÆµÂÊ
-%d£ºÌìÏßÖ®¼äµÄ¾àÀë
-%s1£ºÊä³öĞÅºÅ
+%sï¼šæºä¿¡å·
+%thetaï¼šè§’åº¦
+%fcï¼šä¸­å¿ƒé¢‘ç‡
+%dï¼šå¤©çº¿ä¹‹é—´çš„è·ç¦»
+%s1ï¼šè¾“å‡ºä¿¡å·
 function s1 = signal_productor(s, theta, fc, d)
 
-    scale = 0.01;%¿ØÖÆÔëÉù
-    c = 3.0 * 10^8;%¹âËÙ
-    sub_freq_delta = (20 * 10^6)/30;%ÏàÁÚ×ÓÔØ²¨Ö®¼äµÄÆµÂÊ²î
+    scale = 0.01;%æ§åˆ¶å™ªå£°
+    c = 3.0 * 10^8;%å…‰é€Ÿ
+    sub_freq_delta = (20 * 10^6)/30;%ç›¸é‚»å­è½½æ³¢ä¹‹é—´çš„é¢‘ç‡å·®
     theta = (theta/180)*pi;
-    tau = sin(theta)*d/c;%Ê±¼ä²î
+    tau = sin(theta)*d/c;%æ—¶é—´å·®
 %     s1 = s*exp(-i*fc*tau);
     s1 = zeros(1,30);
     for ii = 1:30
-        sub_freq = 2*pi* (fc + (ii-1)*sub_freq_delta);%×ÓÔØ²¨µÄÆµÂÊ
+        sub_freq = 2*pi* (fc + (ii-1)*sub_freq_delta);%å­è½½æ³¢çš„é¢‘ç‡
         s1(1,ii) = s*exp(-i*sub_freq*tau)+scale*(rand(1,1)+rand(1,1)*i);
     end
 end

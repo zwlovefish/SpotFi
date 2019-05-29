@@ -6,9 +6,9 @@
 % data_name        -- a label for the data which is included in certain outputs
 
 %Write by Joey
-%aoa_packet_data:Ã¿¸öÊı¾İ°üµÄaoa£¬¼´´ÓÃ¿¸öÊı¾İ°üµÄmusicÆµÆ×µÃµ½µÄ²¨·å¶ÔÓ¦µÄaoa
-%tof_packet_data:Ã¿¸öÊı¾İ°üµÄtof£¬¼´´ÓÃ¿¸öÊı¾İ°üµÄmusicÆµÆ×µÃµ½µÄ²¨·å¶ÔÓ¦µÄtof
-%output_top_aoaos:Ç°5¸ö×îÓĞ¿ÉÄÜÊÇÖ±´ïÂ·¾¶µÄAOA
+%aoa_packet_data:æ¯ä¸ªæ•°æ®åŒ…çš„aoaï¼Œå³ä»æ¯ä¸ªæ•°æ®åŒ…çš„musicé¢‘è°±å¾—åˆ°çš„æ³¢å³°å¯¹åº”çš„aoa
+%tof_packet_data:æ¯ä¸ªæ•°æ®åŒ…çš„tofï¼Œå³ä»æ¯ä¸ªæ•°æ®åŒ…çš„musicé¢‘è°±å¾—åˆ°çš„æ³¢å³°å¯¹åº”çš„tof
+%output_top_aoaos:å‰5ä¸ªæœ€æœ‰å¯èƒ½æ˜¯ç›´è¾¾è·¯å¾„çš„AOA
 function [aoa_packet_data,tof_packet_data,output_top_aoas] = spotfi(csi_trace, frequency, sub_freq_delta, antenna_distance, data_name)
     if nargin < 5
         data_name = ' - ';

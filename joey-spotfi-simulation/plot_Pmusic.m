@@ -9,7 +9,7 @@ function plot_Pmusic(filepath)
     csi = get_scaled_csi(csi_entry);
     csi = csi(1, :, :);
     csi = squeeze(csi);
-    %Ã»ÓÐsanitize tofµÄ²¿·Ö
+    %æ²¡æœ‰sanitize tofçš„éƒ¨åˆ†
     smoothed_sanitized_csi = smooth_csi(csi);
     eigenvectors = noise_space_eigenvectors(smoothed_sanitized_csi);
     theta = -90:1:90; 

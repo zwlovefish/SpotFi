@@ -1,24 +1,24 @@
-%Ê¹ÓÃN´ÎµÄ²ÉÑùÁ¿,°ÑËüÃÇµÄMUSICÆ×Ïà¼Ó£¬È»ºóÕÒ·åÖµ
-%theta£º½Ç¶È
-%N£º²ÉÑùÁ¿
+%ä½¿ç”¨Næ¬¡çš„é‡‡æ ·é‡,æŠŠå®ƒä»¬çš„MUSICè°±ç›¸åŠ ï¼Œç„¶åæ‰¾å³°å€¼
+%thetaï¼šè§’åº¦
+%Nï¼šé‡‡æ ·é‡
 function aoa = spotfi_simulation(theta,N)
-    frequency = 2400 * 10^6;%ÖĞĞÄÆµÂÊ
-    sub_freq_delta = (20 * 10^6)/30;%ÏàÁÚÁ½¸ö×ÓÔØ²¨Ö®¼äµÄÆµÂÊ²î
-    antenna_distance = 0.06;%ÏàÁÚÌìÏß¾àÀë
+    frequency = 2400 * 10^6;%ä¸­å¿ƒé¢‘ç‡
+    sub_freq_delta = (20 * 10^6)/30;%ç›¸é‚»ä¸¤ä¸ªå­è½½æ³¢ä¹‹é—´çš„é¢‘ç‡å·®
+    antenna_distance = 0.06;%ç›¸é‚»å¤©çº¿è·ç¦»
     
     theta_range = -90:1:90; 
     tau_range = 0:(1.0 * 10^-9):(100 * 10^-9);
     Pmusic = zeros(length(theta_range), length(tau_range));
     
-    %Ñ­»·Éú³ÉN¸öĞÅºÅ£¬ÇóËùÓĞĞÅºÅµÄÆ×µÄºÍ
+    %å¾ªç¯ç”ŸæˆNä¸ªä¿¡å·ï¼Œæ±‚æ‰€æœ‰ä¿¡å·çš„è°±çš„å’Œ
     for jj = 1:N
-        data = data_productor(theta);%Éú³ÉĞÅºÅ
-        smoothed_sanitized_csi = smooth_csi(data);%Æ½»¬
-        eigenvectors = noise_space_eigenvectors(smoothed_sanitized_csi);%ÇóÔëÉù×Ó¿Õ¼ä
-        Pmusic = Pmusic + music_spectrum(theta_range,tau_range,frequency, sub_freq_delta, antenna_distance,eigenvectors);%ÇóAoAÆ×£¬Ñ­»·µş¼ÓN¸öÆ×
+        data = data_productor(theta);%ç”Ÿæˆä¿¡å·
+        smoothed_sanitized_csi = smooth_csi(data);%å¹³æ»‘
+        eigenvectors = noise_space_eigenvectors(smoothed_sanitized_csi);%æ±‚å™ªå£°å­ç©ºé—´
+        Pmusic = Pmusic + music_spectrum(theta_range,tau_range,frequency, sub_freq_delta, antenna_distance,eigenvectors);%æ±‚AoAè°±ï¼Œå¾ªç¯å åŠ Nä¸ªè°±
     end
     
-    [aoa, tof] = find_music_peaks(Pmusic,theta_range,tau_range);%ÕÒ·åÖµ
+    [aoa, tof] = find_music_peaks(Pmusic,theta_range,tau_range);%æ‰¾å³°å€¼
     
     %%
     [x,y] = meshgrid(theta_range, tau_range);

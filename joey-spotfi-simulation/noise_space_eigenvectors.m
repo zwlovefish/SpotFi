@@ -17,6 +17,7 @@ function eigenvectors = noise_space_eigenvectors(x)
     % Find the largest decrease ratio that occurs between the last 10 elements (largest 10 elements)
     % and is not the first decrease (from the largest eigenvalue to the next largest)
     % Compute the decrease factors between each adjacent pair of elements, except the first decrease
+    % 找出最后10个元素（最大10个元素）之间出现的最大减少比率，并且不是第一个减少（从最大特征值到下一个最大特征值）计算每个相邻元素对之间的减少因子，除了第一个减少
     start_index = size(eigenvalue_matrix, 1) - 2;
     end_index = start_index - 10;
     decrease_ratios = zeros(start_index - end_index + 1, 1);
